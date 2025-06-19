@@ -17,12 +17,10 @@ import java.util.Date;
 // This annotation specifies the name of the table in the database that this entity will map to
 @Data
 @Builder
-@EntityListeners(AuditingEntityListener.class) // This annotation is used to enable auditing features in JPA
+
 @Entity
-public class Review {
-@Id // This annotation indicates that the field is the primary key of the entity
-        @GeneratedValue(strategy = GenerationType.IDENTITY) // This annotation is used to specify that the value of the primary key will be generated automatically
-private Long id;
+public class Review extends BaseModel{
+
 
 @Column(nullable = false)
 private String content;
@@ -30,15 +28,7 @@ private String content;
 private Double rating;
 
 
-@Column(nullable = false)
-@Temporal(TemporalType.DATE) // This annotation specifies that the date should be stored as a timestamp
-@CreatedDate //This annotation indicates that this field will be automatically populated with the current date and time when the entity is created
-private Date createdAt;
 
-@Column(nullable = false)
-@Temporal(TemporalType.TIMESTAMP)
-@LastModifiedDate // This annotation indicates that this field will be automatically populated with the current date and time when the entity is updated
-private Date updatedAt;
 
 @Override
         public String toString() {
