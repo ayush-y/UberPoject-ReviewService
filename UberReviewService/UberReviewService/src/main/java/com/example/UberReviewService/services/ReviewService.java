@@ -36,7 +36,6 @@ public class ReviewService implements CommandLineRunner {
                 .endTime(new Date())
                 .build();
 
-        reviewRepository.save(r); // this code execute sql query to save the review object in the database
         bookingRepository.save(b); // this code execute sql query to save the booking object in the database
 
         System.out.println("Review object created: " + r);

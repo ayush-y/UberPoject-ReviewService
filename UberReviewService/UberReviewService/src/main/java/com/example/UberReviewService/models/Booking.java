@@ -27,4 +27,10 @@ public class Booking extends BaseModel {
 
     @Temporal(value = TemporalType.TIMESTAMP)
     private Long totalDistance;
+
+    @ManyToOne
+    private Driver driver;
+
+    @ManyToOne
+    private Passenger passenger; //we define 1-to-1 relationship between Booking and Passenger
 }
