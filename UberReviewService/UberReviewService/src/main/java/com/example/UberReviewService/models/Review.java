@@ -13,12 +13,13 @@ import java.util.Date;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "bookingreview")
+@Table(name = "booking_review")
 // This annotation specifies the name of the table in the database that this entity will map to
 @Data
 @Builder
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Review extends BaseModel{
 
 

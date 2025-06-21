@@ -1,0 +1,20 @@
+package com.example.UberReviewService.models;
+
+
+import jakarta.annotation.Nullable;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
+
+public class PassangerReview extends Review{
+    @Column(nullable = false)
+    private String passengerReviewContent;
+
+    @Column(nullable = false)
+    private String passengerRating;
+}
