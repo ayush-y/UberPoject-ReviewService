@@ -1,13 +1,7 @@
 package com.example.UberReviewService.models;
-
-import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import java.util.Date;
 @Getter
 @Setter
 
@@ -15,7 +9,6 @@ import java.util.Date;
 @AllArgsConstructor
 @Table(name = "booking_review")
 // This annotation specifies the name of the table in the database that this entity will map to
-@Data
 @Builder
 
 @Entity

@@ -10,7 +10,7 @@ import java.util.Date;
 @EntityListeners(AuditingEntityListener.class) // This annotation is used to enable auditing features in JPA
 public abstract class BaseModel {
     @Id // This annotation indicates that the field is the primary key of the entity
-    @GeneratedValue(strategy = GenerationType.TABLE) // This annotation is used to specify that the value of the primary key will be generated automatically
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // This annotation is used to specify that the value of the primary key will be generated automatically
     private Long id;
 
     @Column(nullable = false)
