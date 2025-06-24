@@ -14,7 +14,7 @@ import java.util.Date;
 @Entity
 public class Booking extends BaseModel {
 
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE })
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE }, fetch = FetchType.LAZY)
     private Review review; //we define 1-to-1 relationship between Booking and Review
 
     @Enumerated(value = EnumType.STRING)
@@ -32,6 +32,6 @@ public class Booking extends BaseModel {
     @ManyToOne
     private Driver driver;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Passenger passenger; //we define 1-to-1 relationship between Booking and Passenger
 }

@@ -2,17 +2,17 @@ package com.example.UberReviewService.services;
 
 import com.example.UberReviewService.models.Booking;
 import com.example.UberReviewService.models.Driver;
-import com.example.UberReviewService.models.Review;
 import com.example.UberReviewService.repositoiries.BookingRepository;
 import com.example.UberReviewService.repositoiries.DriverRepository;
 import com.example.UberReviewService.repositoiries.ReviewRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Service;
 
-import java.sql.SQLOutput;
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class ReviewService implements CommandLineRunner {
@@ -29,6 +29,7 @@ public class ReviewService implements CommandLineRunner {
 
     }
     @Override
+    @Transactional // This annotation ensures that the method runs within a transaction
     public void run(String... args) throws Exception {
 
         System.out.println("ReviewService is running...");
@@ -69,8 +70,21 @@ public class ReviewService implements CommandLineRunner {
 //
 //
 //        }
-        Optional<Driver> d = driverRepository.hqlFindByIdAndLicense(1L, "UP16C007");
-        System.out.println(d.get().getName());
+        List<Long> driverIds = new ArrayList<>(Arrays.asList(1L, 2L, 3L, 4L));
+        // Example list of driver IDs to fetch
+        List<Driver> drivers = driverRepository.findAllByIdIn(driverIds);
+
+        //List<Booking> booking = bookingRepository.findAllByDriverIn(drivers); // Fetch all bookings for the given drivers
+
+        for(Driver driver : drivers) {
+            List<Booking> bookings = driver.getBookings();
+            bookings.forEach(booking -> System.out.println(booking.getId()));
+        }
+
+
+
+
+
 
     }
 
