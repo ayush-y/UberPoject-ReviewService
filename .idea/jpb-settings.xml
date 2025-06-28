@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DatabaseMigrationSettings" lastSelectedDirectory="src/main/resources/db/migration" />
+  <component name="DatabaseMigrationSettings" lastSelectedDirectory="models" />
+  <component name="JpaLiquibaseChangesConfig">
+    <exclude-change idName="booking_review" tagName="createTable" />
+    <exclude-change idName="booking" tagName="createTable" />
+    <exclude-change idName="driver#license_number" tagName="addUniqueConstraint" />
+    <exclude-change idName="FK_BOOKING_ON_REVIEW" tagName="addForeignKeyConstraint" />
+    <exclude-change idName="passanger_review" tagName="createTable" />
+    <exclude-change idName="FK_BOOKING_ON_DRIVER" tagName="addForeignKeyConstraint" />
+    <exclude-change idName="FK_BOOKING_ON_PASSENGER" tagName="addForeignKeyConstraint" />
+    <exclude-change idName="passenger" tagName="createTable" />
+    <exclude-change idName="FK_PASSANGERREVIEW_ON_ID" tagName="addForeignKeyConstraint" />
+  </component>
 </project>
