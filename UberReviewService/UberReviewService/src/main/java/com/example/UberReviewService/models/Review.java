@@ -23,7 +23,6 @@ private Double rating;
 
 
 
-
 @Override
         public String toString() {
             return "Review :" + this.content + " " + this.rating + " " + this.createdAt;

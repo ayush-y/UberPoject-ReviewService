@@ -5,6 +5,7 @@ import lombok.*;
 import org.hibernate.annotations.Cascade;
 
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
@@ -14,7 +15,7 @@ import java.util.Date;
 @Entity
 public class Booking extends BaseModel {
 
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE }, fetch = FetchType.LAZY)
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE })
     private Review review; //we define 1-to-1 relationship between Booking and Review
 
     @Enumerated(value = EnumType.STRING)
