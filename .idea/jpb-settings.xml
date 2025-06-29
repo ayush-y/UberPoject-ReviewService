@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DatabaseMigrationSettings" lastSelectedDirectory="models" />
+  <component name="DatabaseMigrationSettings" lastSelectedDirectory="UberReviewService/UberReviewService/src/main/resources/db/migration" />
   <component name="JpaLiquibaseChangesConfig">
     <exclude-change idName="booking_review" tagName="createTable" />
     <exclude-change idName="booking" tagName="createTable" />

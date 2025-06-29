@@ -15,9 +15,6 @@ import java.util.List;
 @Entity
 public class Booking extends BaseModel {
 
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE })
-    private Review review; //we define 1-to-1 relationship between Booking and Review
-
     @Enumerated(value = EnumType.STRING)
     private BookingStatus bookingStatus;
 
