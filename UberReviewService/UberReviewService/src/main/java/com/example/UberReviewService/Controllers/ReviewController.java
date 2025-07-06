@@ -68,7 +68,7 @@ public class ReviewController {
             }
         }
         @DeleteMapping("/{reviewId}")
-        public ResponseEntity<?> deleteReviewById(@PathVariable Long reviewId) {
+                public ResponseEntity<?> deleteReviewById(@PathVariable Long reviewId) {
         try {
                 String deleteSuccessMessage = "Todo deleted successfully";
                 reviewService.deleteReviewById(reviewId);
@@ -77,5 +77,6 @@ public class ReviewController {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
             }
         }
+
     }
 
